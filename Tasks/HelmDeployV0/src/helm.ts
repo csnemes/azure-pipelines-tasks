@@ -19,7 +19,7 @@ import fs = require('fs');
 
 
 tl.setResourcePath(path.join(__dirname, '..', 'task.json'));
-tl.setResourcePath(path.join( __dirname, '../node_modules/azure-arm-rest-v2/module.json'));
+tl.setResourcePath(path.join(__dirname, '../node_modules/azure-arm-rest-v2/module.json'));
 
 function getKubeConfigFilePath(): string {
     var userdir = helmutil.getTaskTempDir();
@@ -137,7 +137,8 @@ function runHelm(helmCli: helmcli, command: string, kubectlCli: kubernetescli, f
     else if ((command === "install" || command === "upgrade")) {
         try {
             let output = execResult.stdout;
-            let manifests = extractManifestsFromHelmOutput(output);
+            let releaseName = helmutil.extractReleaseNameFromHelmOutput(output);
+            let manifests = helmutil.getManifestsFromRelease(helmCli, releaseName);
             if (manifests && manifests.length > 0) {
                 const manifestUrls = getManifestFileUrlsFromHelmOutput(output);
                 manifests.forEach(manifest => {
