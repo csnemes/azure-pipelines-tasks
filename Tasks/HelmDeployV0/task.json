@@ -13,8 +13,13 @@
     "author": "Microsoft Corporation",
     "version": {
         "Major": 0,
+<<<<<<< HEAD
         "Minor": 170,
         "Patch": 2
+=======
+        "Minor": 171,
+        "Patch": 0
+>>>>>>> Fixing pushDeploymentDataToEvidenceStore logic
     },
     "demands": [],
     "groups": [
