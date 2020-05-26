@@ -5,7 +5,6 @@ import * as path from "path";
 import * as tl from "azure-pipelines-task-lib/task";
 import * as os from "os";
 import * as yaml from 'js-yaml';
-
 import helmcli from "./helmcli";
 
 const matchPatternForReleaseName = new RegExp(/name:(.+)/i);
