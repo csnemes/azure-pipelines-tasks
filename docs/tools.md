@@ -26,7 +26,7 @@ An installer task will:
 
 ## Tool Cache
 
-The tool cache will be located under _work/tools but there's an environment variable VSTS_TOOLS_PATH to override the location.  This is useful for scenarios such as our hosted image or offline agents which want to build a tools cache and direct the agent to use it. 
+The tool cache will be located under _work/tools but there's an environment variable AGENT_TOOLSDIRECTORY to override the location.  This is useful for scenarios such as our hosted image or offline agents which want to build a tools cache and direct the agent to use it. 
 
 The cache will be keyed by name, version, and optionally platform (x86, amd64).  
 
